@@ -1,0 +1,274 @@
+{
+	"version": "0.1",
+	"factorio_version": 0.16,
+	"entities": {
+		"rlab": {
+			"name": "research lab",
+			"icon": "entity/lab/hr-lab.png",
+			"w": 194,
+			"h": 174,
+			"cols": 11,
+			"rows": 3
+		},
+		"mine": {
+			"name": "mining drill",
+			"icon": "entity/electric-mining-drill/electric-mining-drill-S.png",
+			"w": 98,
+			"h": 109,
+			"rows": 8,
+			"cols": 8,
+			"scale": 1
+		},
+		"copo": {
+			"name": "copper ore",
+			"icon": "entity/copper-ore/copper-ore.png",
+			"w": 64,
+			"h": 64,
+			"cols": 8,
+			"rows": 8
+		},
+		"irno": {
+			"name": "iron ore",
+			"icon": "entity/iron-ore/iron-ore.png",
+			"w": 64,
+			"h": 64,
+			"cols": 8,
+			"rows": 8
+		},
+		"jack": {
+			"name": "pumpjack",
+			"icon": "entity/pumpjack/pumpjack-horsehead.png",
+			"w": 104,
+			"h": 102,
+			"rows": 5,
+			"cols": 8,
+			"scale": 1
+		},
+		"oilr": {
+			"name": "oil refinery",
+			"icon": "entity/oil-refinery/hr-oil-refinery.png",
+			"w": 386,
+			"h": 430,
+			"rows": 1,
+			"cols": 4,
+			"scale": 0.4
+		},
+		"furn": {
+			"name": "furnace",
+			"icon": "entity/stone-furnace/hr-stone-furnace.png",
+			"w": 151,
+			"h": 146,
+			"rows": 1,
+			"cols": 1,
+			"scale": 1
+		},
+		"assy": {
+			"name": "assembling machine",
+			"icon": "entity/assembling-machine-2/assembling-machine-2.png",
+			"w": 108,
+			"h": 110,
+			"rows": 4,
+			"cols": 8,
+			"scale": 1
+		}
+	},
+	"tech": {
+		"auto": {
+			"name": "automation",
+			"icon": "technology/automation.png"
+		},
+		"stel": {
+			"name": "steel",
+			"icon": "technology/steel-processing.png"
+		},
+		"oilp": {
+			"name": "oil processing",
+			"icon": "technology/oil-processing.png"
+		},
+		"plas": {
+			"name": "plastics",
+			"icon": "technology/plastics.png"
+		},
+		"rock": {
+			"name": "rocketry",
+			"icon": "technology/rocketry.png"
+		},
+		"silo": {
+			"name": "rocket silo",
+			"icon": "technology/rocket-silo.png"
+		}
+	},
+	"rsrc": {
+		"bug": {
+			"name": "biter",
+			"factory": "",
+			"icon": "icons/big-biter.png"
+		},
+		"cpo": {
+			"name": "copper ore",
+			"factory": "emd",
+			"icon": "icons/copper-ore.png"
+		},
+		"iro": {
+			"name": "iron ore",
+			"factory": "emd",
+			"icon": "icons/iron-ore.png"
+		},
+		"cop": {
+			"name": "copper plate",
+			"factory": "fur",
+			"icon": "icons/copper-plate.png"
+		},
+		"fur": {
+			"name": "furnace",
+			"factory": "asy",
+			"icon": "icons/stone-furnace.png"
+		},
+		"irn": {
+			"name": "iron plate",
+			"factory": "fur",
+			"icon": "icons/iron-plate.png"
+		},
+		"igr": {
+			"name": "iron gear",
+			"factory": "asy",
+			"icon": "icons/iron-gear-wheel.png"
+		},
+		"sp1": {
+			"name": "science pack 1",
+			"factory": "asy",
+			"icon": "icons/science-pack-1.png"
+		},
+		"cwr": {
+			"name": "copper wire",
+			"factory": "asy",
+			"icon": "icons/copper-cable.png"
+		},
+		"elc": {
+			"name": "green circuit",
+			"factory": "asy",
+			"icon": "icons/electronic-circuit.png"
+		},
+		"blt": {
+			"name": "transport belt",
+			"factory": "asy",
+			"icon": "icons/transport-belt.png"
+		},
+		"ins": {
+			"name": "small inserter",
+			"factory": "asy",
+			"icon": "icons/inserter.png"
+		},
+		"sp2": {
+			"name": "science pack 2",
+			"factory": "asy",
+			"icon": "icons/science-pack-2.png"
+		},
+		"emd": {
+			"name": "mining drill",
+			"factory": "asy",
+			"icon": "icons/electric-mining-drill.png"
+		},
+		"asy": {
+			"name": "assembling machine",
+			"factory": "asy",
+			"icon": "icons/assembling-machine-1.png"
+		},
+		"cru": {
+			"name": "crude oil",
+			"factory": "pmj",
+			"icon": "icons/crude-oil.png"
+		},
+		"pmj": {
+			"name": "pumpjack",
+			"factory": "asy",
+			"icon": "icons/pumpjack.png"
+		},
+		"ref": {
+			"name": "refinery",
+			"factory": "asy",
+			"icon": "icons/oil-refinery.png"
+		},
+		"cru": {
+			"name": "crude oil",
+			"factory": "",
+			"icon": "icons/crude-oil.png"
+		},
+		"oil": {
+			"name": "refined oil",
+			"factory": "pmj",
+			"icon": "icons/fluid/crude-oil.png"
+		},
+		"ptg": {
+			"name": "petroleum gas",
+			"factory": "ref",
+			"icon": "icons/fluid/petroleum-gas.png"
+		},
+		"sfl": {
+			"name": "solid fuel",
+			"factory": "chp",
+			"icon": "icons/solid-fuel.png"
+		},
+		"plt": {
+			"name": "plastic bar",
+			"factory": "chp",
+			"icon": "icons/plastic-bar.png"
+		},
+		"adv": {
+			"name": "red circuit",
+			"factory": "asy",
+			"icon": "icons/advanced-circuit.png"
+		},
+		"eng": {
+			"name": "yellow engine",
+			"factory": "asy",
+			"icon": "icons/engine-unit.png"
+		},
+		"stl": {
+			"name": "steel bar",
+			"factory": "fur",
+			"icon": "icons/steel-plate.png"
+		},
+
+		"gun": {
+			"name": "gun turret",
+			"factory": "asy",
+			"icon": "icons/gun-turret.png"
+		},
+		"sp3": {
+			"name": "science pack 3",
+			"factory": "asy",
+			"icon": "icons/science-pack-3.png"
+		},
+		"chp": {
+			"name": "chemical plant",
+			"factory": "asy",
+			"icon": "icons/chemical-plant.png"
+		},
+		"rfl": {
+			"name": "rocket fuel",
+			"factory": "chp",
+			"icon": "icons/rocket-fuel.png"
+		},
+		"rcu": {
+			"name": "rocket control unit",
+			"factory": "asy",
+			"icon": "icons/rocket-control-unit.png"
+		},
+		"rst": {
+			"name": "rocket struct",
+			"factory": "asy",
+			"icon": "icons/rocket-structure.png"
+		},
+		"rkt": {
+			"name": "rocket part",
+			"factory": "asy",
+			"icon": "icons/rocket-part.png"
+		},
+		"sat": {
+			"name": "satellite",
+			"factory": "asy",
+			"icon": "icons/satellite.png"
+		}
+	}
+}
