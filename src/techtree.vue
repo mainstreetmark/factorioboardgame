@@ -1,7 +1,10 @@
 <template>
 	<div id="techtree">
 		<table>
-			<tr v-for="(tech, key) in game.tech">
+			<tr
+				v-for="(tech, key) in game.tech"
+				:key="key"
+			>
 				<td class="center">
 					<img
 						class="techicon"
@@ -10,17 +13,22 @@
 				</td>
 				<!-- <td>{{ asset.tech[key].name }}</td> -->
 				<td>
-					<span v-for="sp in game.tech[key].science">
+					<span
+						v-for="sp in game.tech[key].science"
+						:key="sp"
+					>
 						<img
 							class="tokenhole"
-							:src="'src/assets/graphics/' + asset.rsrc[sp].icon"
+							:src="'../assets/graphics/' + asset.rsrc[sp].icon"
 						/>
+						<pre>{{ asset.rsrc[sp].icon }}</pre>
 					</span>
 				</td>
 				<td>
 					<img
 						class="assy"
 						v-for="count in game.tech[key].production"
+						:key="count"
 						:src="'src/assets/graphics/' + asset.rsrc['asy'].icon"
 					/>
 				</td>

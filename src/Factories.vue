@@ -1,49 +1,78 @@
 
 <template>
-<div id="factories" class='page'>
-	<div class='noprint'>
-		<div id='print'>
-			<a href="javascript:window.print()">Print</a>
-			<div class='note'>At least 1</div>
-		</div>
-		<h1>Factory Sheet - <i>{{ game.name }}</i> - Version {{ game.version }}</h1>
-		<div>
-			<ol>
-				<li>Fold these sheets in half vertically, along the center black line. It helps to score it first. (Since printers aren't perfect, the corners of the sheet may not line up perfectly).</li>
-				<li>Glue each half together and set it under a book or something.</li>
-				<li> Once dry, begin cutting them all out along the dotted lines, horizontally, <i>leaving a margin at the end, so each strip is still connected</i>.</li>
-				<li>Cut them vertically. Being still attached to the sheet makes this easier</li>
-			</ol>
-
-			* note the CSS print trick used on this page requires Safari or Chrome (or webkit)
-		</div>
-	</div>
-	<div class='looper' v-for="(count, factory) in game.factories">
-		<div class='tokenrow' v-for="c in count" :style="GetRowStyle(factory)">
-			<div class='factory ' v-for="d in GetPerrow(factory)">
-				<div class='box' :style="GetStyle(factory, true)"></div>
+	<div
+		id="factories"
+		class='page'
+	>
+		<div class='noprint'>
+			<div id='print'>
+				<a href="javascript:window.print()">Print</a>
+				<div class='note'>At least 1</div>
 			</div>
-			<div class='factory' v-for="d in GetPerrow(factory)">
-				<div class='box' :style="GetStyle(factory, false)">
-					{{ asset.entities[factory].name }}
-					<br/>
-					<span class='token' v-for="token in game.entities[factory].recipe">
-						<img :src="'src/assets/graphics/' + asset.rsrc[token].icon">
-					</span>
+			<h1>Factory Sheet - <i>{{ game.name }}</i> - Version {{ game.version }}</h1>
+			<div>
+				<ol>
+					<li>Fold these sheets in half vertically, along the center black line. It helps to score it first. (Since printers aren't perfect, the corners of the sheet may not line up perfectly).</li>
+					<li>Glue each half together and set it under a book or something.</li>
+					<li> Once dry, begin cutting them all out along the dotted lines, horizontally, <i>leaving a margin at the end, so each strip is still connected</i>.</li>
+					<li>Cut them vertically. Being still attached to the sheet makes this easier</li>
+				</ol>
+
+				* note the CSS print trick used on this page requires Safari or Chrome (or webkit)
+			</div>
+		</div>
+		<div
+			class='looper'
+			v-for="(count, factory) in game.factories"
+			:key="count"
+		>
+			<div
+				class='tokenrow'
+				v-for="c in count"
+				:style="GetRowStyle(factory)"
+				:key="c"
+			>
+				<div
+					class='factory '
+					v-for="d in GetPerrow(factory)"
+					:key="d"
+				>
+					<div
+						class='box'
+						:style="GetStyle(factory, true)"
+					></div>
+				</div>
+				<div
+					class='factory'
+					v-for="d in GetPerrow(factory)"
+					:key="d"
+				>
+					<div
+						class='box'
+						:style="GetStyle(factory, false)"
+					>
+						{{ asset.entities[factory].name }}
+						<br />
+						<span
+							class='token'
+							v-for="token in game.entities[factory].recipe"
+							:key="token"
+						>
+							<img :src="'src/assets/graphics/' + asset.rsrc[token].icon">
+						</span>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
-</div>
 </template>
 
 <script>
 export default {
 	name: 'app',
 	methods: {
-		GetRowStyle(factory) {
+		GetRowStyle (factory) {
 			var css = "";
 			//css = "transform: scale(" + this.asset.entities[factory].scale + ");transform-origin: 0 0;"
 			//css += "border: 1px solid red;"
@@ -51,16 +80,16 @@ export default {
 			return css;
 
 		},
-		GetPerrow(factory) {
+		GetPerrow (factory) {
 			const pagewidth = 700; //700;
 			var count = Math.floor(pagewidth / (this.asset.entities[factory].w * this.asset.entities[factory].scale))
 			return Math.floor(count / 2);
 		},
-		GetFactory(factory) {
+		GetFactory (factory) {
 			var icon = 'src/assets/graphics/' + this.asset.entities[factory].icon;
 			return icon;
 		},
-		GetStyle(factory, front) {
+		GetStyle (factory, front) {
 			var entity = this.asset.entities[factory];
 			var scale = entity.scale;
 			//scale = 1;
@@ -93,7 +122,7 @@ export default {
 			return css;
 		}
 	},
-	data() {
+	data () {
 		return {
 			asset: this.$parent.$data.asset,
 			game: this.$parent.$data.game
@@ -107,50 +136,50 @@ export default {
 
 <style lang="scss">
 #factories {
-    img {
-        //border: 1px dashed blue;
-    }
-    .looper {
-        // background-color: #eff;
-        //  border: 1px solid blue;
-    }
-    .tokenrow {
-        background-color: white;
-        display: flex;
-        page-break-inside: avoid;
-        text-align: center;
-        margin: 0 auto;
-        .factory {
-            border: 1px dashed #bbb;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            display: table;
+	img {
+		//border: 1px dashed blue;
+	}
+	.looper {
+		// background-color: #eff;
+		//  border: 1px solid blue;
+	}
+	.tokenrow {
+		background-color: white;
+		display: flex;
+		page-break-inside: avoid;
+		text-align: center;
+		margin: 0 auto;
+		.factory {
+			border: 1px dashed #bbb;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			display: table;
 
-            &:nth-child(2):nth-last-child(2),
-            &:nth-child(2):nth-last-child(3),
-            &:nth-child(3):nth-last-child(3),
-            &:nth-child(3):nth-last-child(4),
-            &:nth-child(4):nth-last-child(4),
-            &:nth-child(4):nth-last-child(5),
-            &:nth-child(5):nth-last-child(5) {
-                border-right: 1px solid black;
-            }
-            .box {
-                display: table-cell;
-                vertical-align: middle;
-                -webkit-print-color-adjust: exact;
-                //  display: inline-block;
-                overflow: hidden;
-                // img {
-                //     position: relative;
-                //     display: block;
-                //     margin: auto;
-                // }
-            }
-        }
-    }
+			&:nth-child(2):nth-last-child(2),
+			&:nth-child(2):nth-last-child(3),
+			&:nth-child(3):nth-last-child(3),
+			&:nth-child(3):nth-last-child(4),
+			&:nth-child(4):nth-last-child(4),
+			&:nth-child(4):nth-last-child(5),
+			&:nth-child(5):nth-last-child(5) {
+				border-right: 1px solid black;
+			}
+			.box {
+				display: table-cell;
+				vertical-align: middle;
+				-webkit-print-color-adjust: exact;
+				//  display: inline-block;
+				overflow: hidden;
+				// img {
+				//     position: relative;
+				//     display: block;
+				//     margin: auto;
+				// }
+			}
+		}
+	}
 }
 </style>

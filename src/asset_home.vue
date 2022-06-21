@@ -1,44 +1,53 @@
 
 
 <template>
-<div id="assets">
-	<div class='noprint'>
-		<h1 class='center blink'> &uarr; &uarr; Print All These  &uarr; &uarr;</h1> These are the asset pages.
-		<ul>
-			<li>Print on some nice paper, like 110lb.</li>
-			<li>If there's interest, one day these will be generated PDFs. Right now, it's hacky CSS, with printer tricks.</li>
-			<li>Approximate Print Counts:
-				<ul>
-					<li>Launch Sheet: 1 per player</li>
-					<li>Reference Sheet: 1 per game</li>
-					<li>Token Sheets: 1 set of pages at least</li>
-					<li>Factory Sheets: 1 set of pages at least</li>
-					<li>Deck Sheets: 2 or 3</li>
-				</ul>
-			</li>
-		</ul>
+	<div id="assets">
+		<div class='noprint'>
+			<h1 class='center blink'> &uarr; &uarr; Print All These &uarr; &uarr;</h1> These are the asset pages.
+			<ul>
+				<li>Print on some nice paper, like 110lb.</li>
+				<li>If there's interest, one day these will be generated PDFs. Right now, it's hacky CSS, with printer tricks.</li>
+				<li>Approximate Print Counts:
+					<ul>
+						<li>Launch Sheet: 1 per player</li>
+						<li>Reference Sheet: 1 per game</li>
+						<li>Token Sheets: 1 set of pages at least</li>
+						<li>Factory Sheets: 1 set of pages at least</li>
+						<li>Deck Sheets: 2 or 3</li>
+					</ul>
+				</li>
+			</ul>
 
-		<div id='stats'>
-			<h1>Stats</h1>
-			<p>This is a list of tokens and factories that might be required, PER PLAYER, based on some configuration crap in the <i>{{ config }}</i> game.
+			<div id='stats'>
+				<h1>Stats</h1>
+				<p>This is a list of tokens and factories that might be required, PER PLAYER, based on some configuration crap in the <i>{{ config }}</i> game.
 				<h2>Resources</h2>
 				<p>This list is generated recursively, combining similar resources as it moves up the tree.</p>
 				<table>
-					<tr v-for="(tokens,rsrc) in CalcTechTokens()">
+					<tr
+						v-for="(tokens,rsrc) in CalcTechTokens()"
+						:key="rsrc"
+					>
 						<th>
 							<img :src="'src/assets/graphics/' + asset.rsrc[rsrc].icon">&times;{{ rsrc_list[rsrc] }}
 							<!-- {{ asset.rsrc[rsrc].name }} -->
 						</th>
 						<td>
-							<span v-for="(count,token) in tokens">
-						 <img :src="'src/assets/graphics/' + asset.rsrc[token].icon">&times;{{ count }}
-						</span>
+							<span
+								v-for="(count,token) in tokens"
+								:key="token"
+							>
+								<img :src="'src/assets/graphics/' + asset.rsrc[token].icon">&times;{{ count }}
+							</span>
 						</td>
 					</tr>
 					<tr>
 						<th>Sum</th>
 						<td>
-							<span v-for="(count,token) in SumTokens()">
+							<span
+								v-for="(count,token) in SumTokens()"
+								:key="token"
+							>
 								<img :src="'src/assets/graphics/' + asset.rsrc[token].icon">&times;{{ count }}
 							</span>
 						</td>
@@ -48,29 +57,38 @@
 				<h2>Factories</h2>
 				<p>So, these numbers do not reflect productivity bonuses when advancing through the tech tree. Who knows if this is accurate.</p>
 				<table>
-					<tr v-for="(tokens,rsrc) in CalcFactories()">
+					<tr
+						v-for="(tokens,rsrc) in CalcFactories()"
+						:key="rsrc"
+					>
 						<th>
 							<img :src="'src/assets/graphics/' + asset.rsrc[rsrc].icon"> &times;{{ rsrc_list[rsrc] }}
 							<!-- {{ asset.rsrc[rsrc].name }} -->
 						</th>
 						<td>
-							<span v-for="(count,token) in tokens">
-						 <img :src="'src/assets/graphics/' + asset.rsrc[token].icon">&times;{{ count }}
-						</span>
+							<span
+								v-for="(count,token) in tokens"
+								:key="token"
+							>
+								<img :src="'src/assets/graphics/' + asset.rsrc[token].icon">&times;{{ count }}
+							</span>
 						</td>
 					</tr>
 					<tr>
 						<th>Sum</th>
 						<td>
-							<span v-for="(count,token) in SumFactories()">
+							<span
+								v-for="(count,token) in SumFactories()"
+								:key="token"
+							>
 								<img :src="'src/assets/graphics/' + asset.rsrc[token].icon">&times;{{ count }}
 							</span>
 						</td>
 					</tr>
 				</table>
+			</div>
 		</div>
 	</div>
-</div>
 </template>
 
 <script>
@@ -78,7 +96,7 @@ export default {
 	name: 'app',
 	computed: {
 		// Use the json file to figure out what it takes to win
-		rsrc_list() {
+		rsrc_list () {
 			console.log("rsrclist");
 			var out = {},
 				rsrc = "";
@@ -109,7 +127,7 @@ export default {
 
 	},
 	methods: {
-		CalcTokens(rsrc, list) {
+		CalcTokens (rsrc, list) {
 			const out = list || {};
 
 			const recipe = this.game.rsrc[rsrc].recipe;
@@ -136,7 +154,7 @@ export default {
 
 		},
 		// Using the list of winning tokens, what are the resources.
-		CalcTechTokens() {
+		CalcTechTokens () {
 			var out = {};
 			var req = this.rsrc_list;
 			for (var rsrc in req) {
@@ -151,7 +169,7 @@ export default {
 			}
 			return out;
 		},
-		CalcFactories() {
+		CalcFactories () {
 			var tokens = this.CalcTechTokens();
 			var out = {};
 			for (var rsrc in tokens) {
@@ -170,7 +188,7 @@ export default {
 
 			return out;
 		},
-		SumTokens() {
+		SumTokens () {
 			var tokens = this.CalcTechTokens();
 			var out = {};
 			for (var rsrc in tokens) {
@@ -184,7 +202,7 @@ export default {
 			}
 			return out;
 		},
-		SumFactories() {
+		SumFactories () {
 			var tokens = this.CalcFactories();
 			//console.log(tokens);
 			var out = {};
@@ -201,7 +219,7 @@ export default {
 			return out;
 		}
 	},
-	data() {
+	data () {
 		return {
 			config: "alpha",
 			asset: this.$parent.$data.asset,
@@ -216,55 +234,55 @@ export default {
 
 <style lang="scss">
 h1.center {
-    text-align: center;
+	text-align: center;
 }
 #stats {
-    tr:last-child {
-        td,
-        th {
-            border-top: 2px solid black;
-        }
-    }
-    td,
-    th {
-        padding: 5px;
-    }
-    th {
-        text-align: left;
-        background-color: #ddd;
-        padding-right: 20px;
-        vertical-align: text-top;
-        white-space: nowrap;
-    }
-    img {
-        vertical-align: middle;
-    }
+	tr:last-child {
+		td,
+		th {
+			border-top: 2px solid black;
+		}
+	}
+	td,
+	th {
+		padding: 5px;
+	}
+	th {
+		text-align: left;
+		background-color: #ddd;
+		padding-right: 20px;
+		vertical-align: text-top;
+		white-space: nowrap;
+	}
+	img {
+		vertical-align: middle;
+	}
 }
 .blink {
-    -webkit-animation: 1s linear infinite condemned_blink_effect; // for android
-    animation: 1s linear infinite condemned_blink_effect;
+	-webkit-animation: 1s linear infinite condemned_blink_effect; // for android
+	animation: 1s linear infinite condemned_blink_effect;
 }
 @-webkit-keyframes condemned_blink_effect {
-    // for android
-    0% {
-        visibility: hidden;
-    }
-    40% {
-        visibility: hidden;
-    }
-    100% {
-        visibility: visible;
-    }
+	// for android
+	0% {
+		visibility: hidden;
+	}
+	40% {
+		visibility: hidden;
+	}
+	100% {
+		visibility: visible;
+	}
 }
 @keyframes condemned_blink_effect {
-    0% {
-        visibility: hidden;
-    }
-    40% {
-        visibility: hidden;
-    }
-    100% {
-        visibility: visible;
-    }
+	0% {
+		visibility: hidden;
+	}
+	40% {
+		visibility: hidden;
+	}
+	100% {
+		visibility: visible;
+	}
 }
 </style>
