@@ -35,10 +35,10 @@
 					<div
 						class='imgbox'
 						v-for="img in blog.img"
-						:key="img"
+						:key="img.img"
 					>
 						<a :href="'src/assets/img/' + img.img">
-							<img :src="'src/assets/img/' + img.img">
+							<img :src="require('@/assets/img/' + img.img)">
 						</a>
 						<div class='caption'>
 							{{ img.caption }}
@@ -71,7 +71,7 @@ export default {
 				"date": "Feb 2, 2018",
 				"description": "I posted this to reddit",
 				"notes": [
-					"The Deck now uses patch graphics for ore, instead of mined grapohics (u/konstantinua00)"
+					"The Deck now uses patch graphics for ore, instead of mined graphics (u/konstantinua00)"
 				]
 			},
 			{

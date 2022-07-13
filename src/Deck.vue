@@ -36,8 +36,8 @@
 			>
 				<div
 					:data-id='c'
-					v-for="rsrc in GetCard()"
-					:key="rsrc"
+					v-for="(rsrc,index) in GetCard()"
+					:key="index"
 					v-html="GetCardGfx(rsrc)"
 				>
 				</div>
@@ -68,7 +68,7 @@ export default {
 					html += "<img class='rsrc' ";
 					html += "style='left:" + (10 + Math.floor(Math.random() * 4) * 30) + "px; ";
 					html += "top: " + (5 + Math.floor(Math.random() * 4) * 30) + "px' ";
-					html += "src='src/assets/graphics/" + this.asset.rsrc[rsrc].icon + "'>";
+					html += "src='" + require("@/assets/graphics/" + this.asset.rsrc[rsrc].icon) + "'>";
 					break;
 				case 'cpo':
 				case 'iro':
@@ -84,7 +84,7 @@ export default {
 					html += "left:" + (10 + Math.floor(Math.random() * 4) * 30) + "px; ";
 					html += "top: " + (5 + Math.floor(Math.random() * 4) * 30) + "px; ";
 					html += "width:" + entity.w + "px; height: " + entity.h + "px; ";
-					html += "background: url(\"src/assets/graphics/" + entity.icon + "\"); ";
+					html += `background: url(${require("@/assets/graphics/" + entity.icon)}); `;
 					html += "background-position: -" + (entity.w * (Math.floor(Math.random() * entity.cols))) + "px -" + (entity.h * (Math.floor(Math.random() * entity.rows / 3))) + "px";
 					html += "'></div>";
 					console.log(html);

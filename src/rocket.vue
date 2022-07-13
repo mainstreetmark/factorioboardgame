@@ -3,12 +3,12 @@
 	<div id="rocket">
 		<div id='req'>
 			<span
-				v-for="icn in game.launch.gun"
-				:key="icn"
+				v-for="(icn,i) in game.launch.gun"
+				:key="i"
 			>
 				<img
 					class='tokenhole'
-					:src="'src/assets/graphics/' + asset.rsrc[icn].icon"
+					:src="require('@/assets/graphics/' + asset.rsrc[icn].icon)"
 				>
 			</span>
 			<br />
@@ -18,27 +18,27 @@
 			<img
 				class='lighten'
 				id='door1'
-				src='src/assets/graphics/entity/rocket-silo/04-05-doors/04-door-back.png'
+				:src="require('@/assets/graphics/entity/rocket-silo/04-05-doors/04-door-back.png')"
 			>
 			<img
 				class='lighten'
 				id='door2'
-				src='src/assets/graphics/entity/rocket-silo/04-05-doors/05-door-front.png'
+				:src="require('@/assets/graphics/entity/rocket-silo/04-05-doors/05-door-front.png')"
 			>
 			<img
 				class='lighten'
 				id='base'
-				src='src/assets/graphics/entity/rocket-silo/06-silo-base/06-silo-base-day.png'
+				:src="require('@/assets/graphics/entity/rocket-silo/06-silo-base/06-silo-base-day.png')"
 			>
 		</div>
 		<div id='req'>
 			<span
-				v-for="icn in game.launch.rocket"
-				:key="icn"
+				v-for="(icn,i) in game.launch.rocket"
+				:key="i"
 			>
 				<img
 					class='tokenhole'
-					:src="'src/assets/graphics/' + asset.rsrc[icn].icon"
+					:src="require('@/assets/graphics/' + asset.rsrc[icn].icon)"
 				>
 			</span>
 			<br />

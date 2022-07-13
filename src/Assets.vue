@@ -7,7 +7,7 @@
 						<option
 							v-for="config in configs"
 							v-bind:value="config.value"
-							v-bind:key="config.value"
+							v-bind:key="config.key"
 						>
 							{{ config.text }}
 						</option>

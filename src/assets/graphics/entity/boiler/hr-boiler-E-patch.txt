@@ -6,5 +6,5 @@
   frame_count = 1,
   axially_symmetrical = false,
   direction_count = 1,
-  shift = util.by_pixel(33.5, -13.5),
+  shift = util.by_pixel(33.5, -13.5)
 }

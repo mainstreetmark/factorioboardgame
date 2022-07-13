@@ -24,18 +24,18 @@
 		<div
 			class='looper'
 			v-for="(count, factory) in game.factories"
-			:key="count"
+			:key="`f${factory}`"
 		>
 			<div
 				class='tokenrow'
 				v-for="c in count"
 				:style="GetRowStyle(factory)"
-				:key="c"
+				:key="`r${c}`"
 			>
 				<div
 					class='factory '
 					v-for="d in GetPerrow(factory)"
-					:key="d"
+					:key="`d${d}`"
 				>
 					<div
 						class='box'
@@ -45,7 +45,7 @@
 				<div
 					class='factory'
 					v-for="d in GetPerrow(factory)"
-					:key="d"
+					:key="`a${d}`"
 				>
 					<div
 						class='box'
@@ -55,10 +55,10 @@
 						<br />
 						<span
 							class='token'
-							v-for="token in game.entities[factory].recipe"
-							:key="token"
+							v-for="(token,index) in game.entities[factory].recipe"
+							:key="index"
 						>
-							<img :src="'src/assets/graphics/' + asset.rsrc[token].icon">
+							<img :src="require('@/assets/graphics/' + asset.rsrc[token].icon)">
 						</span>
 					</div>
 				</div>
@@ -86,7 +86,7 @@ export default {
 			return Math.floor(count / 2);
 		},
 		GetFactory (factory) {
-			var icon = 'src/assets/graphics/' + this.asset.entities[factory].icon;
+			var icon = require('@/assets/graphics/' + this.asset.entities[factory].icon);
 			return icon;
 		},
 		GetStyle (factory, front) {

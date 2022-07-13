@@ -5,10 +5,10 @@
 			<b>Starting Inventory:</b>
 			<div
 				class='rsrc'
-				v-for=" rsrc in game.inventory.starting "
-				:key="rsrc"
+				v-for=" (rsrc,i) in game.inventory.starting "
+				:key="i"
 			>
-				<img :src=" 'src/assets/graphics/' + asset.rsrc[rsrc].icon ">
+				<img :src="require('@/assets/graphics/' + asset.rsrc[rsrc].icon)">
 			</div>
 		</div>
 		<h2>Inventory</h2>

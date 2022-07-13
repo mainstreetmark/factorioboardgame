@@ -41,7 +41,7 @@
 					v-for="d in 20"
 					:key="d"
 				>
-					<img :src="'/src/assets/graphics/' + asset.rsrc[token].icon">
+					<img :src="require('/src/assets/graphics/' + asset.rsrc[token].icon)">
 				</div>
 			</div>
 		</div>

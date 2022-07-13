@@ -8,7 +8,7 @@
 				<td class="center">
 					<img
 						class="techicon"
-						:src="'src/assets/graphics/' + asset.tech[key].icon"
+						:src="require('@/assets/graphics/' + asset.tech[key].icon)"
 					/>
 				</td>
 				<!-- <td>{{ asset.tech[key].name }}</td> -->
@@ -19,9 +19,8 @@
 					>
 						<img
 							class="tokenhole"
-							:src="'../assets/graphics/' + asset.rsrc[sp].icon"
+							:src="require('@/assets/graphics/' + asset.rsrc[sp].icon)"
 						/>
-						<pre>{{ asset.rsrc[sp].icon }}</pre>
 					</span>
 				</td>
 				<td>
@@ -29,7 +28,7 @@
 						class="assy"
 						v-for="count in game.tech[key].production"
 						:key="count"
-						:src="'src/assets/graphics/' + asset.rsrc['asy'].icon"
+						:src="require('@/assets/graphics/' + asset.rsrc['asy'].icon)"
 					/>
 				</td>
 			</tr>
