@@ -1,251 +1,250 @@
 {
-	"name": "alpha",
-	"description": "A simplified, 5-level tech tree, with some bugs.",
-	"author": "mainstreetmark",
-	"version": "0.1e",
-	"assets-version": 0.16,
-	"launch": {
-		"rocket": ["rkt", "rkt", "sat", "rkt", "rkt"],
-		"gun": ["gun", "gun", "gun", "gun", "gun"]
-	},
-	"inventory": {
-		"starting": ["emd", "emd", "emd", "fur", "fur", "fur", "asy"]
-	},
-	"deck": {
-		"cru": {
-			"deck_chance": 0.1,
-			"card_chance": [0.8, 0.2]
-		},
-		"iro": {
-			"deck_chance": 0.7,
-			"card_chance": [0.7, 0.2, 0.1]
-		},
-		"cpo": {
-			"deck_chance": 0.3,
-			"card_chance": [0.5, 0.4, 0.1]
-		},
-		"bug": {
-			"deck_chance": 0.1,
-			"card_chance": [0.5, 0.4, 0.1]
-		}
-
-	},
-	"tokens": {
-		"cpo": 3,
-		"iro": 3,
-		"cop": 5,
-		"irn": 5,
-		"igr": 2,
-		"cwr": 1,
-		"sp1": 1,
-		"elc": 1,
-		"blt": 1,
-		"emd": 1,
-		"ins": 1,
-		"gun": 1,
-		"sp2": 1,
-		"eng": 1,
-		"stl": 2,
-		"oil": 3,
-		"ptg": 2,
-		"sfl": 1,
-		"sp3": 1,
-		"adv": 1,
-		"plt": 1,
-		"rkt": 1,
-		"rst": 1,
-		"rfl": 1,
-		"rcu": 1,
-		"sat": 1
-	},
-	"factories": {
-		"assy": 8,
-		"mine": 8,
-		"jack": 5,
-		"oilr": 2,
-		"furn": 6
-	},
-	"stats": {
-		"calc_rsrc": {
-			"sp1": 2,
-			"sp2": 2,
-			"sp3": 2,
-			"rkt": 4,
-			"sat": 1,
-			"gun": 5
-		}
-	},
-	"entities": {
-		"mine": {
-			"recipe": ["igr"]
-		},
-		"jack": {
-			"recipe": ["elc", "igr", "stl"]
-		},
-		"oilr": {
-			"recipe": ["elc", "igr", "stl", "irn"]
-		},
-		"furn": {
-			"recipe": ["iro"]
-		},
-		"assy": {
-			"recipe": ["cop", "irn"]
-		}
-	},
-	"tech": {
-		"auto": {
-			"science": ["sp1"],
-			"production": 1
-		},
-		"stel": {
-			"science": ["sp1"],
-			"production": 1
-		},
-		"oilp": {
-			"science": ["sp2"],
-			"production": 2
-		},
-		"plas": {
-			"science": ["sp2"],
-			"production": 2
-		},
-		"rock": {
-			"science": ["sp3"],
-			"production": 3
-		},
-		"silo": {
-			"science": ["sp3"],
-			"production": 3
-		}
-	},
-	"rsrc": {
-		"cpo": {
-			"recipe": [],
-			"req": ""
-		},
-		"iro": {
-			"recipe": [],
-			"req": ""
-		},
-		"cop": {
-			"recipe": ["cpo"],
-			"req": ""
-		},
-		"fur": {
-			"recipe": ["irn"],
-			"req": ""
-		},
-		"irn": {
-			"recipe": ["iro"],
-			"req": ""
-		},
-		"igr": {
-			"recipe": ["irn"],
-			"req": ""
-		},
-		"sp1": {
-			"recipe": ["cop", "igr"],
-			"req": ""
-		},
-		"cwr": {
-			"recipe": ["cop"],
-			"req": ""
-		},
-		"elc": {
-			"recipe": ["irn", "cwr"],
-			"req": "auto"
-		},
-		"blt": {
-			"recipe": ["igr", "irn"],
-			"req": "auto"
-		},
-		"ins": {
-			"recipe": ["elc", "igr", "irn"],
-			"req": "auto"
-		},
-		"gun": {
-			"recipe": ["irn", "cop", "igr"],
-			"req": "auto"
-		},
-		"sp2": {
-			"recipe": ["blt", "ins"],
-			"req": "auto"
-		},
-		"emd": {
-			"recipe": ["elc", "igr", "irn"],
-			"req": "auto"
-		},
-		"asy": {
-			"recipe": ["irn", "elc"],
-			"req": "auto"
-		},
-		"cru": {
-			"recipe": [],
-			"req": "oilp"
-		},
-		"pmj": {
-			"recipe": ["irn"],
-			"req": "oilp"
-		},
-		"ref": {
-			"recipe": ["irn"],
-			"req": "oilp"
-		},
-		"oil": {
-			"recipe": [],
-			"req": "oilp"
-		},
-		"ptg": {
-			"recipe": ["oil", "oil"],
-			"req": "oilp"
-		},
-		"sfl": {
-			"recipe": ["ptg"],
-			"req": "oilp"
-		},
-		"plt": {
-			"recipe": ["ptg"],
-			"req": "plas"
-		},
-		"adv": {
-			"recipe": ["plt", "elc", "cwr"],
-			"req": "plas"
-		},
-		"eng": {
-			"recipe": ["stl", "igr"],
-			"req": "stel"
-		},
-		"stl": {
-			"recipe": ["irn"],
-			"req": "stel"
-		},
-		"sp3": {
-			"recipe": ["emd", "eng", "adv"],
-			"req": "plas"
-		},
-		"chp": {
-			"recipe": ["irn"],
-			"req": "oilp"
-		},
-		"rfl": {
-			"recipe": ["sfl"],
-			"req": "rock"
-		},
-		"rcu": {
-			"recipe": ["cop", "irn", "stl"],
-			"req": "rock"
-		},
-		"rst": {
-			"recipe": ["cop", "stl", "plt"],
-			"req": "rock"
-		},
-		"rkt": {
-			"recipe": ["rst", "rcu", "rfl"],
-			"req": "rock"
-		},
-		"sat": {
-			"recipe": ["rst", "adv", "rfl"],
-			"req": "silo"
-		}
-	}
+  "name": "alpha",
+  "description": "A simplified, 5-level tech tree, with some bugs.",
+  "author": "mainstreetmark",
+  "version": "0.1e",
+  "assets-version": 0.16,
+  "launch": {
+    "rocket": ["rkt", "rkt", "sat", "rkt", "rkt"],
+    "gun": ["gun", "gun", "gun", "gun", "gun"]
+  },
+  "inventory": {
+    "starting": ["emd", "emd", "emd", "fur", "fur", "fur", "asy"]
+  },
+  "deck": {
+    "cru": {
+      "deck_chance": 0.1,
+      "card_chance": [0.8, 0.2]
+    },
+    "iro": {
+      "deck_chance": 0.7,
+      "card_chance": [0.7, 0.2, 0.1]
+    },
+    "cpo": {
+      "deck_chance": 0.3,
+      "card_chance": [0.5, 0.4, 0.1]
+    },
+    "bug": {
+      "deck_chance": 0.1,
+      "card_chance": [0.5, 0.4, 0.1]
+    }
+  },
+  "tokens": {
+    "cpo": 3,
+    "iro": 3,
+    "cop": 5,
+    "irn": 5,
+    "igr": 2,
+    "cwr": 1,
+    "sp1": 1,
+    "elc": 1,
+    "blt": 1,
+    "emd": 1,
+    "ins": 1,
+    "gun": 1,
+    "sp2": 1,
+    "eng": 1,
+    "stl": 2,
+    "oil": 3,
+    "ptg": 2,
+    "sfl": 1,
+    "sp3": 1,
+    "adv": 1,
+    "plt": 1,
+    "rkt": 1,
+    "rst": 1,
+    "rfl": 1,
+    "rcu": 1,
+    "sat": 1
+  },
+  "factories": {
+    "assy": 8,
+    "mine": 8,
+    "jack": 5,
+    "oilr": 2,
+    "furn": 6
+  },
+  "stats": {
+    "calc_rsrc": {
+      "sp1": 2,
+      "sp2": 2,
+      "sp3": 2,
+      "rkt": 4,
+      "sat": 1,
+      "gun": 5
+    }
+  },
+  "entities": {
+    "mine": {
+      "recipe": ["igr"]
+    },
+    "jack": {
+      "recipe": ["elc", "igr", "stl"]
+    },
+    "oilr": {
+      "recipe": ["elc", "igr", "stl", "irn"]
+    },
+    "furn": {
+      "recipe": ["iro"]
+    },
+    "assy": {
+      "recipe": ["cop", "irn"]
+    }
+  },
+  "tech": {
+    "auto": {
+      "science": ["sp1"],
+      "production": 1
+    },
+    "stel": {
+      "science": ["sp1"],
+      "production": 1
+    },
+    "oilp": {
+      "science": ["sp2"],
+      "production": 2
+    },
+    "plas": {
+      "science": ["sp2"],
+      "production": 2
+    },
+    "rock": {
+      "science": ["sp3"],
+      "production": 3
+    },
+    "silo": {
+      "science": ["sp3"],
+      "production": 3
+    }
+  },
+  "rsrc": {
+    "cpo": {
+      "recipe": [],
+      "req": ""
+    },
+    "iro": {
+      "recipe": [],
+      "req": ""
+    },
+    "cop": {
+      "recipe": ["cpo"],
+      "req": ""
+    },
+    "fur": {
+      "recipe": ["irn"],
+      "req": ""
+    },
+    "irn": {
+      "recipe": ["iro"],
+      "req": ""
+    },
+    "igr": {
+      "recipe": ["irn"],
+      "req": ""
+    },
+    "sp1": {
+      "recipe": ["cop", "igr"],
+      "req": ""
+    },
+    "cwr": {
+      "recipe": ["cop"],
+      "req": ""
+    },
+    "elc": {
+      "recipe": ["irn", "cwr"],
+      "req": "auto"
+    },
+    "blt": {
+      "recipe": ["igr", "irn"],
+      "req": "auto"
+    },
+    "ins": {
+      "recipe": ["elc", "igr", "irn"],
+      "req": "auto"
+    },
+    "gun": {
+      "recipe": ["irn", "cop", "igr"],
+      "req": "auto"
+    },
+    "sp2": {
+      "recipe": ["blt", "ins"],
+      "req": "auto"
+    },
+    "emd": {
+      "recipe": ["elc", "igr", "irn"],
+      "req": "auto"
+    },
+    "asy": {
+      "recipe": ["irn", "elc"],
+      "req": "auto"
+    },
+    "cru": {
+      "recipe": [],
+      "req": "oilp"
+    },
+    "pmj": {
+      "recipe": ["irn"],
+      "req": "oilp"
+    },
+    "ref": {
+      "recipe": ["irn"],
+      "req": "oilp"
+    },
+    "oil": {
+      "recipe": [],
+      "req": "oilp"
+    },
+    "ptg": {
+      "recipe": ["oil", "oil"],
+      "req": "oilp"
+    },
+    "sfl": {
+      "recipe": ["ptg"],
+      "req": "oilp"
+    },
+    "plt": {
+      "recipe": ["ptg"],
+      "req": "plas"
+    },
+    "adv": {
+      "recipe": ["plt", "elc", "cwr"],
+      "req": "plas"
+    },
+    "eng": {
+      "recipe": ["stl", "igr"],
+      "req": "stel"
+    },
+    "stl": {
+      "recipe": ["irn"],
+      "req": "stel"
+    },
+    "sp3": {
+      "recipe": ["emd", "eng", "adv"],
+      "req": "plas"
+    },
+    "chp": {
+      "recipe": ["irn"],
+      "req": "oilp"
+    },
+    "rfl": {
+      "recipe": ["sfl"],
+      "req": "rock"
+    },
+    "rcu": {
+      "recipe": ["cop", "irn", "stl"],
+      "req": "rock"
+    },
+    "rst": {
+      "recipe": ["cop", "stl", "plt"],
+      "req": "rock"
+    },
+    "rkt": {
+      "recipe": ["rst", "rcu", "rfl"],
+      "req": "rock"
+    },
+    "sat": {
+      "recipe": ["rst", "adv", "rfl"],
+      "req": "silo"
+    }
+  }
 }
