@@ -29,7 +29,7 @@
 						:key="rsrc"
 					>
 						<th>
-							<img :src="'src/assets/graphics/' + asset.rsrc[rsrc].icon">&times;{{ rsrc_list[rsrc] }}
+							<img :src="require('@/assets/graphics/' + asset.rsrc[rsrc].icon)">&times;{{ rsrc_list[rsrc] }}
 							<!-- {{ asset.rsrc[rsrc].name }} -->
 						</th>
 						<td>
@@ -37,7 +37,7 @@
 								v-for="(count,token) in tokens"
 								:key="token"
 							>
-								<img :src="'src/assets/graphics/' + asset.rsrc[token].icon">&times;{{ count }}
+								<img :src="require('@/assets/graphics/' + asset.rsrc[token].icon)">&times;{{ count }}
 							</span>
 						</td>
 					</tr>
@@ -48,7 +48,7 @@
 								v-for="(count,token) in SumTokens()"
 								:key="token"
 							>
-								<img :src="'src/assets/graphics/' + asset.rsrc[token].icon">&times;{{ count }}
+								<img :src="require('@/assets/graphics/' + asset.rsrc[token].icon)">&times;{{ count }}
 							</span>
 						</td>
 					</tr>
@@ -62,7 +62,7 @@
 						:key="rsrc"
 					>
 						<th>
-							<img :src="'src/assets/graphics/' + asset.rsrc[rsrc].icon"> &times;{{ rsrc_list[rsrc] }}
+							<img :src="require('@/assets/graphics/' + asset.rsrc[rsrc].icon)"> &times;{{ rsrc_list[rsrc] }}
 							<!-- {{ asset.rsrc[rsrc].name }} -->
 						</th>
 						<td>
@@ -70,7 +70,7 @@
 								v-for="(count,token) in tokens"
 								:key="token"
 							>
-								<img :src="'src/assets/graphics/' + asset.rsrc[token].icon">&times;{{ count }}
+								<img :src="require('@/assets/graphics/' + asset.rsrc[token].icon)">&times;{{ count }}
 							</span>
 						</td>
 					</tr>
@@ -81,7 +81,7 @@
 								v-for="(count,token) in SumFactories()"
 								:key="token"
 							>
-								<img :src="'src/assets/graphics/' + asset.rsrc[token].icon">&times;{{ count }}
+								<img :src="require('@/assets/graphics/' + asset.rsrc[token].icon)">&times;{{ count }}
 							</span>
 						</td>
 					</tr>
