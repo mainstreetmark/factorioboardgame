@@ -7,6 +7,7 @@ module.exports = {
   extends: ["plugin:vue/essential"],
   parserOptions: {
     parser: "babel-eslint",
+    ecmaVersion: 2020,
   },
 	rules: {
 		// allow async-await
@@ -26,7 +27,7 @@ module.exports = {
 		// 'import/namespace': 'error',
 		// 'import/default': 'error',
 		// 'import/export': 'error',
-		'import/extensions': 'off',
+		// 'import/extensions': 'off',
 		'import/no-unresolved': 'off',
 		'import/no-extraneous-dependencies': 'off',
 		'prefer-promise-reject-errors': 'off',

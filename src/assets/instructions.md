@@ -1,3 +1,5 @@
+# Factorio Board Game Instructions
+
 <!-- TOC START min:1 max:3 link:true update:true -->
 - [Note](#note)
 - [Requirements](#requirements)
@@ -124,7 +126,7 @@ Once the factory has been placed, the player puts a token of the factory's produ
 
 ### Draw a resources
 
-The player can choose to draw a new resource card.  
+The player can choose to draw a new resource card.
 
 #### Resource Card
 
@@ -144,7 +146,7 @@ It's good strategy therefore to get guns up pretty early in the game.
 
 ## Factories
 
-"Factory" is the generic term for Assembling Machines, Mining Drills, Refineries, etc...  Factories produce resource tokens, if given the appropriate amount of resource tokens.  Some items like Copper Wire require just Copper Plate, but some require a great deal more complicated resources, each requiring their own factories.  
+"Factory" is the generic term for Assembling Machines, Mining Drills, Refineries, etc...  Factories produce resource tokens, if given the appropriate amount of resource tokens.  Some items like Copper Wire require just Copper Plate, but some require a great deal more complicated resources, each requiring their own factories.
 
 #### Mining
 
@@ -183,7 +185,7 @@ Each technology tree advance grants _a whole new set_ of tokens from each assemb
 
 * It's made chiefly of paper.
 * No Belts/Bots/Chest/Trains. Inserters, chests and belts just make too many game pieces, and get too close to "Why not just play *Factorio*".
-* Resource tokens represent a _flow_ of resources, rather than a single resource.  
+* Resource tokens represent a _flow_ of resources, rather than a single resource.
 * The tech tree is greatly simplified.
 * Many of the recipes are simplified.
 * Exploring for resources is equivalent to drawing resource cards.  You don't always get what you want when drawing a card, or driving around in your tank.
@@ -210,7 +212,7 @@ Each technology tree advance grants _a whole new set_ of tokens from each assemb
 
 (this all happens in a single turn)
 
-1.  Player 1 draws a Bug card, with 3 bugs on it.  
+1.  Player 1 draws a Bug card, with 3 bugs on it.
 2. Player 1 selects an Opposing Player.
 2.  The opposing player has 1 gun built, so the damage he takes is 3(bugs)-1(guns) = 2(damage).
 3.  Opposing player removes his two most recent factories, along with the resource tokens they generated.
