@@ -1,4 +1,4 @@
-# factorioboardgame2
+# factorioboardgame
 
 ## Project setup
 ```
