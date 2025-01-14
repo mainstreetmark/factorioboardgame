@@ -1,6 +1,7 @@
 /** @format */
 
 module.exports = {
+  publicPath: '/factorioboardgame/',
 	chainWebpack: (config) => {
 		config.module
 			.rule("markdown")
