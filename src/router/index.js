@@ -18,29 +18,29 @@ Vue.use(VueRouter);
 Vue.use(VueRouter);
 
 const routes = [
-	{ path: "/home", component: Home, alias: "/" },
-	{ path: "/instructions", component: Instructions },
-	{ path: "/about", component: About },
-	{ path: "/contact", component: Contact },
-	{
-		path: "/assets",
-		component: Assets,
-		children: [
-			{ path: "/", component: AssetHome },
-			{ path: ":game/", component: AssetHome },
-			{ path: ":game/launch", component: Launch },
-			{ path: ":game/ref", component: Reference },
-			{ path: ":game/tokens", component: Tokens },
-			{ path: ":game/factories", component: Factories },
-			{ path: ":game/deck", component: Deck },
-		],
-	},
+  { path: "/home", component: Home, alias: "/" },
+  { path: "/instructions", component: Instructions },
+  { path: "/about", component: About },
+  { path: "/contact", component: Contact },
+  {
+    path: "/assets",
+    component: Assets,
+    children: [
+      { path: "/", component: AssetHome },
+      { path: ":game/", component: AssetHome },
+      { path: ":game/launch", component: Launch },
+      { path: ":game/ref", component: Reference },
+      { path: ":game/tokens", component: Tokens },
+      { path: ":game/factories", component: Factories },
+      { path: ":game/deck", component: Deck },
+    ],
+  },
 ];
 
 const router = new VueRouter({
-	mode: "history",
-	base: process.env.BASE_URL,
-	routes,
+  mode: "hash",
+  base: process.env.BASE_URL,
+  routes,
 });
 
 export default router;
