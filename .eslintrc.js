@@ -1,14 +1,14 @@
 module.exports = {
-  root: true,
-  env: {
-    node: true,
-  },
-//   extends: ["plugin:vue/essential"],
-  extends: ["plugin:vue/essential"],
-  parserOptions: {
-    parser: "babel-eslint",
-    ecmaVersion: 2020,
-  },
+	root: true,
+	env: {
+		node: true,
+	},
+	//   extends: ["plugin:vue/essential"],
+	extends: ["plugin:vue/essential"],
+	parserOptions: {
+		parser: "babel-eslint",
+		ecmaVersion: 2020,
+	},
 	rules: {
 		// allow async-await
 		'generator-star-spacing': 'off',
