@@ -20,7 +20,7 @@
 
 			<div id='stats'>
 				<h1>Stats</h1>
-				<p>This is a list of tokens and factories that might be required, PER PLAYER, based on some configuration crap in the <i>{{ config }}</i> game.
+				<p>This is a list of tokens and factories that might be required, PER PLAYER, based on some configuration crap in the <i>{{ config }}</i> game.</p>
 				<h2>Resources</h2>
 				<p>This list is generated recursively, combining similar resources as it moves up the tree.</p>
 				<table>
